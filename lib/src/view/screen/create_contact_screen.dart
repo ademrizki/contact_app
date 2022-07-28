@@ -76,7 +76,12 @@ class _CreateContactScreenState extends State<CreateContactScreen> {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
 
-                    Navigator.pop(context);
+                    final Map<String, dynamic> newContact = {
+                      'name': nameController.text.trim(),
+                      'phone': phoneController.text.trim(),
+                    };
+
+                    Navigator.pop(context, newContact);
                   }
                 },
               ),
