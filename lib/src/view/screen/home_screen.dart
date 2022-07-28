@@ -1,3 +1,4 @@
+import 'package:contact_app/src/view/screen/create_contact_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -8,6 +9,15 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const CreateContactScreen(),
+          ),
+        ),
+        child: const Icon(Icons.add),
       ),
     );
   }
